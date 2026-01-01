@@ -15,20 +15,13 @@ from src.tools.pdf_utils import convert_resume_pdf_to_str, write_resume_profile_
 from src.tools.txt_file import extract_text_from_file
 
 
-async def test():
-    load_dotenv()
-    with open("assets/output/resume_profile.json","r") as f:
-        json_data = f.read()
-    from src.models.resume_profile import ResumeProfile
-    resume_profile = ResumeProfile.model_validate_json(json_data)
 
-    write_resume_profile_to_pdf(resume_profile, "assets/test_resume.pdf")
 
 async def main():
     with trace("Resume to Job Matching"):
         load_dotenv()
-        resume_text = convert_resume_pdf_to_str("assets/input/resume.pdf")
-        job_file = "assets/input/palo_alto.txt"
+        resume_text = convert_resume_pdf_to_str("assets/input/resume_file.pdf")
+        job_file = "assets/input/job_file.txt"
         job_description_text = await extract_text_from_file(job_file)
 
 

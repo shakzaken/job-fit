@@ -142,7 +142,7 @@ cython_debug/
 # Project specific
 assets/output/
 *.pdf
-!assets/input/resume.pdf
+!assets/input/resume_file.pdf
 
 
 assets/input/*
