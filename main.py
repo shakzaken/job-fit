@@ -64,6 +64,8 @@ async def main():
         write_resume_profile_to_pdf(tailored_resume, "assets/output/tailored_resume.pdf")
         output_report = OutPutReport(base_match_result=baseline_match_results,
                                      final_match_result=final_match_results)
+
+
         write_output_mdfile(output_report, "assets/output/job_fit_report.md")
         print("Process completed. Tailored resume and report generated.")
 
@@ -74,7 +76,7 @@ async def main():
 
 
 if __name__ == "__main__":
-    asyncio.run(test())
+    asyncio.run(main())
 
 
 
